@@ -8,51 +8,91 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var timerDisplay: UILabel!
-    @IBOutlet weak var startStop: UIButton!
-    @IBOutlet weak var reset: UIButton!
-
+    @IBOutlet weak var startButton: RoundButton!
+    @IBOutlet weak var resetButton: RoundButton!
+    @IBOutlet weak var lapButton: RoundButton!
+    @IBOutlet weak var stopButton: RoundButton!
+    @IBOutlet weak var lapsView: UITableView!
+    
     var _time: Int = 0
+    var _lastLapTime: Int = 0
     var _timer: Timer?
+    var _laps: Array<Int> = Array()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-    @IBAction func startStopClicked(_ sender: Any) {
-        if let timer = _timer {
-            reset.isEnabled = true
+    @IBAction func startButtonClicked(_ sender: Any) {
+        resetButton.isHidden = true
+        lapButton.isHidden = false
+        lapButton.isEnabled = true
+        startButton.isHidden = true
+        stopButton.isHidden = false
 
-            startStop.setTitle("Start", for: .normal)
-
-            timer.invalidate()
-            _timer = nil
-        } else {
-            reset.isEnabled = false
-
-            startStop.setTitle("Stop", for: .normal)
-
-            _timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true, block: { [unowned self] timer in
-                self._time = self._time + 1
-                self.updateLabel()
-            })
-        }
+        _timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true, block: { [unowned self] timer in
+            self._time = self._time + 1
+            self.updateLabel()
+        })
     }
 
-    @IBAction func resetClicked(_ sender: Any) {
+    @IBAction func stopButtonClicked(_ sender: Any) {
+        lapButton.isHidden = true
+        resetButton.isHidden = false
+        stopButton.isHidden = true
+        startButton.isHidden = false
+
+        _timer!.invalidate()
+        _timer = nil
+    }
+    
+    @IBAction func resetButtonClicked(_ sender: Any) {
+        resetButton.isHidden = true
+        lapButton.isHidden = false
+        lapButton.isEnabled = false
+
         _time = 0
-        reset.isEnabled = false
+        _lastLapTime = 0
+        _laps.removeAll()
+
+        lapsView.reloadData()
+
         updateLabel()
     }
 
-    func updateLabel() {
-        let hundredth = _time % 100
-        let seconds = (_time / 100) % 60
-        let minutes = (_time / 6000) % 60
-        let hours = _time / 360000
-        timerDisplay.text = String(format: "%02d:%02d:%02d.%02d", hours, minutes, seconds, hundredth);
+    @IBAction func lapButtonClicked(_ sender: Any) {
+        _laps.append(_time - _lastLapTime)
+        _lastLapTime = _time
+        
+        lapsView.reloadData()
     }
+
+    func updateLabel() {
+        timerDisplay.text = formatTime(_time)
+    }
+
+    func formatTime(_ time: Int) -> String {
+        let hundredth = time % 100
+        let seconds = (time / 100) % 60
+        let minutes = (time / 6000) % 60
+        return String(format: "%02d:%02d.%02d", minutes, seconds, hundredth);
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return _laps.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ContentCell", for: indexPath)
+
+        cell.textLabel!.text = String(format: "Lap %i", _laps.count - indexPath.row)
+        cell.detailTextLabel!.text = formatTime(_laps[_laps.count - indexPath.row - 1])
+
+        return cell
+    }
+
 }
 
