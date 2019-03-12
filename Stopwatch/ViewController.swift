@@ -78,7 +78,12 @@ class ViewController: UIViewController, UITableViewDataSource {
         let hundredth = time % 100
         let seconds = (time / 100) % 60
         let minutes = (time / 6000) % 60
-        return String(format: "%02d:%02d.%02d", minutes, seconds, hundredth);
+        let hours = time / 360000
+        if (hours > 0) {
+            return String(format: "%d:%02d:%02d.%02d", hours, minutes, seconds, hundredth);
+        } else {
+            return String(format: "%02d:%02d.%02d", minutes, seconds, hundredth);
+        }
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
