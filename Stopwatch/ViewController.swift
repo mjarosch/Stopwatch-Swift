@@ -37,6 +37,7 @@ class ViewController: UIViewController, UITableViewDataSource {
             self._time = self._time + 1
             self.updateLabel()
         })
+        RunLoop.current.add(_timer!, forMode: .common)
     }
 
     @IBAction func stopButtonClicked(_ sender: Any) {

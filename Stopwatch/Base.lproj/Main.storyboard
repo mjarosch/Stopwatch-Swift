@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_0" orientation="landscape">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,19 +15,19 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Stopwatch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="30" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ymo-u7-6Q9">
-                                <rect key="frame" x="284" y="16" width="268" height="288"/>
+                                <rect key="frame" x="16" y="358" width="288" height="194"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="separatorInset" minX="8" minY="0.0" maxX="8" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ContentCell" textLabel="9hx-ZS-EkY" detailTextLabel="JCl-9w-8wk" style="IBUITableViewCellStyleValue1" id="Jix-n5-yA0">
-                                        <rect key="frame" x="0.0" y="28" width="268" height="30"/>
+                                        <rect key="frame" x="0.0" y="28" width="288" height="30"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Jix-n5-yA0" id="LOb-rs-EkN">
-                                            <rect key="frame" x="0.0" y="0.0" width="268" height="29.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="288" height="29.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9hx-ZS-EkY">
@@ -38,7 +38,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JCl-9w-8wk">
-                                                    <rect key="frame" x="220" y="8" width="33" height="14.5"/>
+                                                    <rect key="frame" x="240" y="8" width="33" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
@@ -54,16 +54,16 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ihf-Ux-RvV">
-                                <rect key="frame" x="16" y="16" width="268" height="288"/>
+                                <rect key="frame" x="16" y="36" width="288" height="314"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GZ6-Wd-XDk">
-                                        <rect key="frame" x="0.0" y="0.0" width="268" height="228"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="254"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="50"/>
                                         <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dhh-ey-CCN" customClass="RoundButton" customModule="Stopwatch" customModuleProvider="target">
-                                        <rect key="frame" x="190" y="210" width="78" height="78"/>
+                                        <rect key="frame" x="210" y="236" width="78" height="78"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Dhh-ey-CCN" secondAttribute="height" multiplier="1:1" id="dtD-Pk-JOu"/>
                                         </constraints>
@@ -84,7 +84,7 @@
                                         </connections>
                                     </button>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b64-rW-emK" customClass="RoundButton" customModule="Stopwatch" customModuleProvider="target">
-                                        <rect key="frame" x="190" y="210" width="78" height="78"/>
+                                        <rect key="frame" x="210" y="236" width="78" height="78"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="b64-rW-emK" secondAttribute="height" multiplier="1:1" id="haS-di-JSN"/>
                                         </constraints>
@@ -105,7 +105,7 @@
                                         </connections>
                                     </button>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I6Z-0l-KuL" customClass="RoundButton" customModule="Stopwatch" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="210" width="78" height="78"/>
+                                        <rect key="frame" x="0.0" y="236" width="78" height="78"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="I6Z-0l-KuL" secondAttribute="height" multiplier="1:1" id="Lpz-hP-S0q"/>
                                         </constraints>
@@ -129,7 +129,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A6E-sF-62M" customClass="RoundButton" customModule="Stopwatch" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="210" width="78" height="78"/>
+                                        <rect key="frame" x="0.0" y="236" width="78" height="78"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="A6E-sF-62M" secondAttribute="height" multiplier="1:1" id="14f-AZ-akS"/>
                                         </constraints>
