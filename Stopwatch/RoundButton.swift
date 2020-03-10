@@ -44,7 +44,7 @@ class RoundButton: UIButton {
             return fillColor(for: .normal)
         }
         set {
-            setFillColor(newValue, forState: .normal)
+            setFillColor(newValue, for: .normal)
         }
     }
 
@@ -54,7 +54,7 @@ class RoundButton: UIButton {
             return fillColor(for: .highlighted)
         }
         set {
-            setFillColor(newValue, forState: .highlighted)
+            setFillColor(newValue, for: .highlighted)
         }
     }
 
@@ -64,7 +64,7 @@ class RoundButton: UIButton {
             return fillColor(for: .selected)
         }
         set {
-            setFillColor(newValue, forState: .selected)
+            setFillColor(newValue, for: .selected)
         }
     }
 
@@ -74,7 +74,7 @@ class RoundButton: UIButton {
             return fillColor(for: .disabled)
         }
         set {
-            setFillColor(newValue, forState: .disabled)
+            setFillColor(newValue, for: .disabled)
         }
     }
 
@@ -117,6 +117,8 @@ class RoundButton: UIButton {
 
         _innerCircleLayer.masksToBounds = true
         layer.insertSublayer(_innerCircleLayer, at: 0)
+        
+        contentEdgeInsets = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
 
         updateCircleColorForState()
     }
@@ -147,7 +149,7 @@ class RoundButton: UIButton {
         return _fillValues[state.rawValue] ?? _fillValues[UIControl.State.normal.rawValue] ?? _defaultFillColor
     }
 
-    func setFillColor(_ color: UIColor?, forState state: UIControl.State) {
+    func setFillColor(_ color: UIColor?, for state: UIControl.State) {
         if (color != nil) {
             _fillValues[state.rawValue] = color
         } else {

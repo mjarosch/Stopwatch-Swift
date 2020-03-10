@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		270A64182417238800A6A749 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270A64172417238800A6A749 /* MainViewController.swift */; };
+		270A641A2417367400A6A749 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270A64192417367400A6A749 /* SceneDelegate.swift */; };
 		27BC278622359D2B008BAD2D /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BC278522359D2B008BAD2D /* RoundButton.swift */; };
 		27C2422D2218C5A300F06BE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C2422C2218C5A300F06BE8 /* AppDelegate.swift */; };
 		27C2422F2218C5A300F06BE8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C2422E2218C5A300F06BE8 /* ViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		270A64172417238800A6A749 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		270A64192417367400A6A749 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		27BC278522359D2B008BAD2D /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		27C242292218C5A300F06BE8 /* Stopwatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stopwatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27C2422C2218C5A300F06BE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +67,8 @@
 				27C242352218C5A400F06BE8 /* LaunchScreen.storyboard */,
 				27C242382218C5A400F06BE8 /* Info.plist */,
 				27BC278522359D2B008BAD2D /* RoundButton.swift */,
+				270A64172417238800A6A749 /* MainViewController.swift */,
+				270A64192417367400A6A749 /* SceneDelegate.swift */,
 			);
 			path = Stopwatch;
 			sourceTree = "<group>";
@@ -99,6 +105,7 @@
 				TargetAttributes = {
 					27C242282218C5A300F06BE8 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1130;
 					};
 				};
 			};
@@ -138,9 +145,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				270A641A2417367400A6A749 /* SceneDelegate.swift in Sources */,
 				27BC278622359D2B008BAD2D /* RoundButton.swift in Sources */,
 				27C2422F2218C5A300F06BE8 /* ViewController.swift in Sources */,
 				27C2422D2218C5A300F06BE8 /* AppDelegate.swift in Sources */,
+				270A64182417238800A6A749 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,13 +298,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 87NU98GSKZ;
 				INFOPLIST_FILE = Stopwatch/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mikejarosch.StopwatchSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -307,13 +317,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 87NU98GSKZ;
 				INFOPLIST_FILE = Stopwatch/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mikejarosch.StopwatchSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
